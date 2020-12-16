@@ -135,6 +135,7 @@ All CLI options are optional:
 --useDocker                 Run handlers in a docker container.
 --layersDir                 The directory layers should be stored in. Default: ${codeDir}/.serverless-offline/layers'
 --dockerReadOnly            Marks if the docker code layer should be read only. Default: true
+--dockerNetworkName         Configures which network the docker container should attach to.
 --allowCache                Allows the code of lambda functions to cache if supported.
 ```
 
@@ -280,6 +281,15 @@ By default layers are downloaded on a per-project basis, however, if you want to
 
 #### dockerReadOnly
 For certain programming languages and frameworks, it's desirable to be able to write to the filesystem for things like testing with local SQLite databases, or other testing-only modifications. For this, you can set `dockerReadOnly: false`, and this will allow local filesystem modifications. This does not strictly mimic AWS Lambda, as Lambda has a Read-Only filesystem, so this should be used as a last resort.
+
+## Docker (Bridge) Network
+By configuring a network name through the `--dockerNetworkName` option, the docker container will connect to the network with the given name. 
+ 
+**Prerequisites:**
+* The `--useDocker` option needs to be set to `true`.
+* The supplied network name needs to be a name of a network that *exists*.
+
+For documentation about Docker networks, refer to [this page](https://docs.docker.com/network/bridge/#manage-a-user-defined-bridge).
 
 ## Token authorizers
 
