@@ -142,6 +142,8 @@ export default class DockerContainer {
       dockerArgs.push('--add-host', `host.docker.internal:${gatewayIp}`)
     }
 
+    debugLog('Creating the Docker container with these args:', ...dockerArgs)
+
     const { stdout: containerId } = await execa('docker', [
       'create',
       ...dockerArgs,
