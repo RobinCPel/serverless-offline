@@ -290,7 +290,7 @@ By configuring a network name through the `--dockerNetworkName` option, the dock
 * The `--useDocker` option needs to be set to `true`.
 * The supplied network name needs to be a name of a network that *exists*.
 
-For documentation about Docker networks, refer to [this page](https://docs.docker.com/network/bridge/#manage-a-user-defined-bridge).
+For documentation about Docker networks, refer to [this page](https://docs.docker.com/network/bridge/).
 
 ## Token authorizers
 
