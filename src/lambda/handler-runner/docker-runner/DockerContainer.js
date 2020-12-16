@@ -132,7 +132,20 @@ export default class DockerContainer {
     })
 
     if (this.#dockerOptions.networkName) {
-      dockerArgs.push('--network', this.#dockerOptions.networkName)
+      try {
+        await execa('docker', [
+          'network',
+          'inspect',
+          this.#dockerOptions.networkName,
+        ])
+        dockerArgs.push('--network', this.#dockerOptions.networkName)
+      } catch (_) {
+        logWarning(
+          `Docker network with name "${
+            this.#dockerOptions.networkName
+          }" not found!`,
+        )
+      }
     }
 
     if (platform() === 'linux') {
