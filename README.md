@@ -45,6 +45,7 @@ This plugin is updated by its users, I just do maintenance and ensure that PRs a
 - [Usage with `invoke`](#usage-with-invoke)
 - [The `process.env.IS_OFFLINE` variable](#the-processenvis_offline-variable)
 - [Docker and Layers](#docker-and-layers)
+- [Docker (bridge) network](#docker-bridge-network)
 - [Token authorizers](#token-authorizers)
 - [Custom authorizers](#custom-authorizers)
 - [Remote authorizers](#remote-authorizers)
@@ -282,7 +283,7 @@ By default layers are downloaded on a per-project basis, however, if you want to
 #### dockerReadOnly
 For certain programming languages and frameworks, it's desirable to be able to write to the filesystem for things like testing with local SQLite databases, or other testing-only modifications. For this, you can set `dockerReadOnly: false`, and this will allow local filesystem modifications. This does not strictly mimic AWS Lambda, as Lambda has a Read-Only filesystem, so this should be used as a last resort.
 
-## Docker (Bridge) Network
+## Docker (bridge) network
 By configuring a network name through the `--dockerNetworkName` option, the docker container will connect to the network with the given name. 
  
 **Prerequisites:**
