@@ -27,6 +27,7 @@ export default {
   useDocker: false,
   layersDir: null,
   dockerReadOnly: true,
+  dockerNetworkName: '',
   functionCleanupIdleTimeSeconds: 60,
   allowCache: false,
 }

@@ -96,6 +96,9 @@ export default {
   dockerReadOnly: {
     usage: 'Marks if the docker code layer should be read only. Default: true',
   },
+  dockerNetworkName: {
+    usage: 'Configures which network the docker container should attach to.',
+  },
   functionCleanupIdleTimeSeconds: {
     usage: 'Number of seconds until an idle function is eligible for cleanup',
   },

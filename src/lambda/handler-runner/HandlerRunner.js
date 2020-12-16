@@ -42,6 +42,7 @@ export default class HandlerRunner {
       const dockerOptions = {
         readOnly: this.#options.dockerReadOnly,
         layersDir: this.#options.layersDir,
+        networkName: this.#options.dockerNetworkName,
       }
 
       const { default: DockerRunner } = await import('./docker-runner/index.js')
